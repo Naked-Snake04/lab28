@@ -45,7 +45,7 @@ Window {
         Button {
             anchors.bottom: parent.bottom
             width: parent.width
-            text: "GET Data"
+            text: "КНОПКА"
             onClicked: getData()
         }
     }
