@@ -2,7 +2,7 @@ function load() {
 
 listModel.clear();
 var xhr = new XMLHttpRequest();
-xhr.open("GET","qrc:/data.json",true);
+xhr.open("GET","qrc:/Rt.json",true);
 xhr.onreadystatechange = function()
 {
 if ( xhr.readyState == xhr.DONE)
@@ -19,11 +19,11 @@ xhr.send();
 
 function loaded(jsonObject)
 {
-for ( var index in jsonObject.flux.all )
+for ( var index in jsonObject.movies )
 {
 listModel.append({
-"title" : jsonObject.flux.all[index].data["title"],
-"icon" : jsonObject.flux.all[index].data["icon"]});
+"title" : jsonObject.movies[index]["title"],
+"id" : jsonObject.movies[index]["id"]});
 }
 
 // get directly the json object. Should work but not tested
