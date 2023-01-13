@@ -4,8 +4,6 @@
 
 int main(int argc, char *argv[])
 {
-    qmlRegisterType<json_parsing>("MyModule", 1, 0, "Parsing");
-
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
