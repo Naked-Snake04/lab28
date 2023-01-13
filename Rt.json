@@ -1,0 +1,222 @@
+{
+    "movies": [
+        {
+            "id": "771313962",
+            "title": "Avengers: Age of Ultron",
+            "year": 2015,
+            "mpaa_rating": "PG-13",
+            "runtime": 141,
+            "critics_consensus": "",
+            "release_dates": {
+                "theater": "2015-05-01"
+            },
+            "ratings": {
+                "critics_rating": "Certified Fresh",
+                "critics_score": 75,
+                "audience_rating": "Upright",
+                "audience_score": 89
+            },
+            "synopsis": "When Tony Stark jumpstarts a dormant peacekeeping program, things go awry and Earth's Mightiest Heroes, including Iron Man, Captain America, Thor, The Incredible Hulk, Black Widow and Hawkeye, are put to the ultimate test as they battle to save the planet from destruction at the hands of the villainous Ultron.",
+            "posters": {
+                "thumbnail": "http://resizing.flixster.com/DVeVAWtpeCRUjCsJZWUyv1jxPTA=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/01/11190143_ori.jpg",
+                "profile": "http://resizing.flixster.com/DVeVAWtpeCRUjCsJZWUyv1jxPTA=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/01/11190143_ori.jpg",
+                "detailed": "http://resizing.flixster.com/DVeVAWtpeCRUjCsJZWUyv1jxPTA=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/01/11190143_ori.jpg",
+                "original": "http://resizing.flixster.com/DVeVAWtpeCRUjCsJZWUyv1jxPTA=/54x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/01/11190143_ori.jpg"
+            },
+            "abridged_cast": [
+                {
+                    "name": "Robert Downey Jr.",
+                    "id": "162654529",
+                    "characters": [
+                        "Tony Stark/Iron Man"
+                    ]
+                },
+                {
+                    "name": "Chris Evans",
+                    "id": "162652784",
+                    "characters": [
+                        "Steve Rogers/Captain America"
+                    ]
+                },
+                {
+                    "name": "Mark Ruffalo",
+                    "id": "162653904",
+                    "characters": [
+                        "Bruce Banner/The Hulk"
+                    ]
+                },
+                {
+                    "name": "Chris Hemsworth",
+                    "id": "770829335",
+                    "characters": [
+                        "Thor"
+                    ]
+                },
+                {
+                    "name": "Scarlett Johansson",
+                    "id": "162652872",
+                    "characters": [
+                        "Natasha Romanoff/Black Widow"
+                    ]
+                }
+            ],
+            "alternate_ids": {
+                "imdb": "2395427"
+            },
+            "links": {
+                "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771313962.json",
+                "alternate": "http://www.rottentomatoes.com/m/avengers_age_of_ultron/",
+                "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771313962/cast.json",
+                "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771313962/reviews.json",
+                "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771313962/similar.json"
+            }
+        },
+        {
+            "id": "771354922",
+            "title": "Furious 7",
+            "year": 2015,
+            "mpaa_rating": "PG-13",
+            "runtime": 140,
+            "critics_consensus": "",
+            "release_dates": {
+                "theater": "2015-04-03"
+            },
+            "ratings": {
+                "critics_rating": "Certified Fresh",
+                "critics_score": 82,
+                "audience_rating": "Upright",
+                "audience_score": 87
+            },
+            "synopsis": "Continuing the global exploits in the unstoppable franchise built on speed, Vin Diesel, Paul Walker and Dwayne Johnson lead the returning cast of Fast & Furious 7. James Wan directs this chapter of the hugely successful series that also welcomes back favorites Michelle Rodriguez, Jordana Brewster, Tyrese Gibson, Chris \"Ludacris\" Bridges, Elsa Pataky and Lucas Black. They are joined by international action stars new to the franchise including Jason Statham, Djimon Hounsou, Tony Jaa, Ronda Rousey and Kurt Russell.",
+            "posters": {
+                "thumbnail": "http://resizing.flixster.com/pVDoql2vCTzNNu0t6z0EUlE5G_c=/51x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/14/11181482_ori.jpg",
+                "profile": "http://resizing.flixster.com/pVDoql2vCTzNNu0t6z0EUlE5G_c=/51x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/14/11181482_ori.jpg",
+                "detailed": "http://resizing.flixster.com/pVDoql2vCTzNNu0t6z0EUlE5G_c=/51x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/14/11181482_ori.jpg",
+                "original": "http://resizing.flixster.com/pVDoql2vCTzNNu0t6z0EUlE5G_c=/51x81/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/14/11181482_ori.jpg"
+            },
+            "abridged_cast": [
+                {
+                    "name": "Vin Diesel",
+                    "id": "162652472",
+                    "characters": [
+                        "Dominic Toretto"
+                    ]
+                },
+                {
+                    "name": "Paul Walker",
+                    "id": "162654234",
+                    "characters": [
+                        "Brian O'Conner"
+                    ]
+                },
+                {
+                    "name": "Tony Jaa",
+                    "id": "162684066",
+                    "characters": [
+                        "Louie Tran"
+                    ]
+                },
+                {
+                    "name": "Jason Statham",
+                    "id": "162653720",
+                    "characters": [
+                        "Deckard Shaw"
+                    ]
+                },
+                {
+                    "name": "Dwayne \"The Rock\" Johnson",
+                    "id": "770893686",
+                    "characters": [
+                        "Luke Hobbs"
+                    ]
+                }
+            ],
+            "alternate_ids": {
+                "imdb": "2820852"
+            },
+            "links": {
+                "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771354922.json",
+                "alternate": "http://www.rottentomatoes.com/m/furious_7/",
+                "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771354922/cast.json",
+                "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771354922/reviews.json",
+                "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771354922/similar.json"
+            }
+        },
+        {
+            "id": "771373149",
+            "title": "The Age of Adaline",
+            "year": 2015,
+            "mpaa_rating": "PG-13",
+            "runtime": 109,
+            "critics_consensus": "",
+            "release_dates": {
+                "theater": "2015-04-24"
+            },
+            "ratings": {
+                "critics_rating": "Rotten",
+                "critics_score": 54,
+                "audience_rating": "Upright",
+                "audience_score": 71
+            },
+            "synopsis": "After miraculously remaining 29 years old for almost eight decades, Adaline Bowman (Blake Lively) has lived a solitary existence, never allowing herself to get close to anyone who might reveal her secret. But a chance encounter with charismatic philanthropist Ellis Jones (Michiel Huisman) reignites her passion for life and romance. When a weekend with his parents (Harrison Ford and Kathy Baker) threatens to uncover the truth, Adaline makes a decision that will change her life forever. (C) Lionsgate",
+            "posters": {
+                "thumbnail": "http://resizing.flixster.com/3EnldVZVB_OtlP0LN0sz8lCxJHA=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/16/11181617_ori.jpg",
+                "profile": "http://resizing.flixster.com/3EnldVZVB_OtlP0LN0sz8lCxJHA=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/16/11181617_ori.jpg",
+                "detailed": "http://resizing.flixster.com/3EnldVZVB_OtlP0LN0sz8lCxJHA=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/16/11181617_ori.jpg",
+                "original": "http://resizing.flixster.com/3EnldVZVB_OtlP0LN0sz8lCxJHA=/54x80/dkpu1ddg7pbsk.cloudfront.net/movie/11/18/16/11181617_ori.jpg"
+            },
+            "abridged_cast": [
+                {
+                    "name": "Blake Lively",
+                    "id": "162652609",
+                    "characters": [
+                        "Adaline"
+                    ]
+                },
+                {
+                    "name": "Michiel Huisman",
+                    "id": "682571065",
+                    "characters": [
+                        "Ellis Jones"
+                    ]
+                },
+                {
+                    "name": "Harrison Ford",
+                    "id": "162661579",
+                    "characters": [
+                        "William Jones"
+                    ]
+                },
+                {
+                    "name": "Ellen Burstyn",
+                    "id": "162660525",
+                    "characters": [
+                        "Flemming"
+                    ]
+                },
+                {
+                    "name": "Kathy Baker",
+                    "id": "162654642",
+                    "characters": [
+                        "Kathy Jones"
+                    ]
+                }
+            ],
+            "alternate_ids": {
+                "imdb": "1655441"
+            },
+            "links": {
+                "self": "http://api.rottentomatoes.com/api/public/v1.0/movies/771373149.json",
+                "alternate": "http://www.rottentomatoes.com/m/the_age_of_adaline/",
+                "cast": "http://api.rottentomatoes.com/api/public/v1.0/movies/771373149/cast.json",
+                "reviews": "http://api.rottentomatoes.com/api/public/v1.0/movies/771373149/reviews.json",
+                "similar": "http://api.rottentomatoes.com/api/public/v1.0/movies/771373149/similar.json"
+            }
+        }
+    ],
+    "links": {
+        "self": "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=3&country=us",
+        "alternate": "http://www.rottentomatoes.com/movie/box-office/"
+    },
+    "link_template": "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit={num-results}&country={country-code}"
+}
