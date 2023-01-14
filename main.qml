@@ -12,26 +12,30 @@ Window {
     ListModel{
         id: listModel
     }
-Rectangle{
-    color: "#484A4A"
-    GridView {
-        id: view
-        anchors.topMargin: 55
-        anchors.leftMargin: 10
-        anchors.centerIn: parent
-        anchors.fill: parent
-        model: listModel
-        cellWidth: 300; cellHeight: 350
+    Rectangle{
+        color: "#484A4A"
+        GridView {
+            id: view
+            anchors.topMargin: 55
+            anchors.leftMargin: 10
+            anchors.centerIn: parent
+            anchors.fill: parent
+            model: listModel
+            cellWidth: 300; cellHeight: 350
 
 
-        delegate: Rectangle{
-color: "transparent"
-                         Image {
-                             source: image.url
-                             width: 225; height: 325
-                         }
-                  }
-}
+            delegate: Rectangle{
+                color: "transparent"
+                Image {
+                    source: image
+                    width: 225; height: 325
+                }
+                Text {
+                    id: text
+                    text: title
+                }
+            }
+        }
 
         Component.onCompleted: {
             getApi();
@@ -59,41 +63,41 @@ color: "transparent"
         }
     }
 
-            function getApi() {
-                const data = null;
+    function getApi() {
+        const data = null;
 
-                const xhr = new XMLHttpRequest();
-                xhr.responseType = 'json';
-                xhr.withCredentials = true;
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.withCredentials = true;
 
-                xhr.onreadystatechange = function() {
-                    if(xhr.readyState === XMLHttpRequest.DONE) {
-                        print('DONE')
-                        var json = JSON.parse(xhr.responseText)
-                        print(xhr.responseText)
-                        loaded(json)
-                    }
-                }
-                textfield.text.replace(" ", "_");
-                if (textfield.text == "")
-                xhr.open("GET", "https://online-movie-database.p.rapidapi.com/title/v2/find?title=a&titleType=movie&limit=20&sortArg=moviemeter%2Casc")
-                else
-                xhr.open("GET", "https://online-movie-database.p.rapidapi.com/title/v2/find?title="+ textfield.text +"&titleType=movie&limit=20&sortArg=moviemeter%2Casc");
-                xhr.setRequestHeader("X-RapidAPI-Key", "c2b15c3a8emsh8012b14720d4e22p1b7c46jsnac86ccc53ad5");
-                xhr.setRequestHeader("X-RapidAPI-Host", "online-movie-database.p.rapidapi.com");
-
-                xhr.send(data);
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === XMLHttpRequest.DONE) {
+                print('DONE')
+                var json = JSON.parse(xhr.responseText)
+                print(xhr.responseText)
+                loaded(json)
             }
+        }
+        textfield.text.replace(" ", "_");
+        if (textfield.text == "")
+            xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&s=ava&type=movie")
+        else
+            xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&s="+ textfield.text +"&type=movie");
+        xhr.setRequestHeader("API-Key", "f35af11c");
+        xhr.setRequestHeader("API-Host", "omdbapi.com");
 
-            function loaded(json){
-                listModel.clear()
-                for ( var index in json.results) {
-                listModel.append({
-                                     "title": json.results[index]["title"],
-                                     "year": json.results[index]["year"],
-                                     "image": json.results[index]["image"]
-                                 })
-                }
-            }
+        xhr.send(data);
+    }
+
+    function loaded(json){
+        listModel.clear()
+        for ( var index in json.Search) {
+            listModel.append({
+                                 "title": json.Search[index]["Title"],
+                                 "year": json.Search[index]["Year"],
+                                 "image": json.Search[index]["Poster"]
+                             })
+        }
+    }
 }
 
