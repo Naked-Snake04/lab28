@@ -7,13 +7,12 @@ Window {
     width: 1000
     height: 800
     title: qsTr("Movies")
-
+color: "#484A4A"
 
     ListModel{
         id: listModel
     }
-    Rectangle{
-        color: "#484A4A"
+
         GridView {
             id: view
             anchors.topMargin: 55
@@ -26,6 +25,8 @@ Window {
 
             delegate: Rectangle{
                 color: "transparent"
+                border.width: 5
+                border.color: "#00FF00"
                 Image {
                     source: image
                     width: 225; height: 325
@@ -35,13 +36,12 @@ Window {
                     text: title
                 }
             }
+
+            Component.onCompleted: {
+                getApi();
+            }
         }
 
-        Component.onCompleted: {
-            getApi();
-        }
-
-    }
 
     TextField
     {
@@ -57,7 +57,7 @@ Window {
 
         background: Rectangle  {
             color: "#484A4A"
-            radius: 10
+            //radius: 15
             border.width: 5
             border.color: "#00FF00"
         }
