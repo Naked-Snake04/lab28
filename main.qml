@@ -4,26 +4,36 @@ import QtQuick.Controls 2.12
 
 Window {
     visible: true
-    width: 640
-    height: 480
+    width: 1000
+    height: 800
     title: qsTr("Movies")
+
+TextField
+{
+    id: textfield
+    width: 1000
+}
 
     ListModel{
         id: listModel
     }
 
-    ListView {
+    GridView {
         id: view
+        anchors.topMargin: 50
+        anchors.leftMargin: 10
         anchors.centerIn: parent
         anchors.fill: parent
         model: listModel
+        cellWidth: 300; cellHeight: 350
         delegate: Rectangle{
-            width:parent.width
-                     height:80
-                     Text {
-                     text: title + "\n" + year
-        }
-}
+
+                         Image {
+                             source: image.url
+                             width: 225; height: 325
+                         }
+                  }
+
         function getApi() {
             const data = null;
 
@@ -51,7 +61,8 @@ Window {
             for ( var index in json.results) {
             listModel.append({
                                  "title": json.results[index]["title"],
-                                 "year": json.results[index]["year"]
+                                 "year": json.results[index]["year"],
+                                 "image": json.results[index]["image"]
                              })
             }
         }
@@ -61,3 +72,4 @@ Window {
 
     }
 }
+
