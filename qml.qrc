@@ -1,9 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>Rt.json</file>
-        <file>test.json</file>
         <file>parse.js</file>
-        <file>data.json</file>
     </qresource>
 </RCC>

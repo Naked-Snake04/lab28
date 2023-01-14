@@ -1,6 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "json_parsing.h"
 
 int main(int argc, char *argv[])
 {

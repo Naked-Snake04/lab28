@@ -36,12 +36,12 @@ Window {
                 if(xhr.readyState === XMLHttpRequest.DONE) {
                     print('DONE')
                     var json = JSON.parse(xhr.responseText)
-                    stateText.text = "%1".arg(json.title);
+                    stateText.text = "%1".arg(json.results[0]["title"]);
                     print(xhr.responseText)
                 }
             }
 
-            xhr.open("GET", "https://online-movie-database.p.rapidapi.com/title/get-videos?tconst=tt0944947&limit=25&region=US");
+            xhr.open("GET", "https://online-movie-database.p.rapidapi.com/title/v2/find?title=a&limit=20&sortArg=moviemeter%2Casc");
             xhr.setRequestHeader("X-RapidAPI-Key", "c2b15c3a8emsh8012b14720d4e22p1b7c46jsnac86ccc53ad5");
             xhr.setRequestHeader("X-RapidAPI-Host", "online-movie-database.p.rapidapi.com");
 
