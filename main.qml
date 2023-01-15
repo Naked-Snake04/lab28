@@ -3,11 +3,18 @@ import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 
 Window {
+    id: mainWindow
     visible: true
     width: 1000
     height: 800
     title: qsTr("Movies")
     color: "#484A4A"
+
+    StackView{
+        id: stack
+        anchors.fill: parent
+        initialItem: view
+    }
 
     ListModel{
         id: listModel
@@ -32,7 +39,7 @@ Window {
             }
             MouseArea {
                 anchors.fill: parent
-                onClicked: { parent.color = 'red' }
+                onClicked: { stack.push(page2) }
             }
         }
 
@@ -54,10 +61,16 @@ Window {
         onTextChanged: getApi()
 
         background: Rectangle  {
-            color: "#484A4A"
-            //radius: 15
-            border.width: 5
-            border.color: "#00FF00"
+            color: "#8A8A8A"
+        }
+    }
+
+    SimplePage {
+        id: page2
+        visible: false
+        buttonText: "Back"
+        onButtonClicked: {
+            stack.pop()
         }
     }
 
