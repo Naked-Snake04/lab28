@@ -30,6 +30,7 @@ Window {
         cellWidth: 300; cellHeight: 350
 
         delegate: Rectangle{
+            id: rect
             color: "#00FF00"
             width: 230; height: 330
             Image {
@@ -38,7 +39,10 @@ Window {
                 anchors.centerIn: parent
                 MouseArea {
                     anchors.fill: parent
-                    onClicked: { stack.push(page2) }
+                    onClicked: {
+                        stack.push(page2);
+                        print(id)
+                    }
                 }
             }
         }
@@ -91,7 +95,7 @@ Window {
         }
         textfield.text.replace(" ", "_");
         if (textfield.text == "")
-            xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&s=ava&type=movie")
+            xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&s=avatar&type=movie")
         else
             xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&s="+ textfield.text +"&type=movie");
         xhr.setRequestHeader("API-Key", "f35af11c");
@@ -110,5 +114,6 @@ Window {
                              })
         }
     }
+
 }
 

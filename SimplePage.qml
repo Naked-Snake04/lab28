@@ -11,23 +11,12 @@ Page{
         color: "#484A4A"
     }
 
-    Image {
-        id: image
-        source: ""
-        width: 325; height: 525
-        anchors{
-            horizontalCenter: parent.horizontalCenter;
-            verticalCenter: parent.verticalCenter
-            left: parent.left
-            right: parent.right
-        }
-    }
-
     Grid {
         id: grid
         rows: 7
         columns: 2
-        anchors.left: image.left
+        x: 300
+        y: 50
         leftPadding: 50
         spacing: 8
         Text {
@@ -117,6 +106,7 @@ Page{
             font.pixelSize: 16
         }
 }
+
     Button{
         id: navButton
         anchors.right: parent.right
@@ -128,6 +118,13 @@ Page{
             color: "#8A8A8A"
         }
 
+    }
+
+    Image {
+        anchors.leftMargin: 10
+        id: image
+        source: ""
+        width: 325; height: 525
     }
 
     function getApiDetails() {
@@ -150,10 +147,11 @@ Page{
                 print(xhr.responseText)
             }
         }
-        xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&t=avatar&type=movie");
+        xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&t=Avatar&type=movie");
         //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(data);
     }
+
     Component.onCompleted: {
         getApiDetails()
     }
