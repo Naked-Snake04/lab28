@@ -7,38 +7,116 @@ Page{
     property alias buttonText: navButton.text
     signal buttonClicked()
 
-    ListModel{
-        id:titleModel
+    background: Rectangle{
+        color: "#484A4A"
     }
 
-    GridView {
-        id: viewTitle
-        anchors.topMargin: 55
-        anchors.leftMargin: 10
-        anchors.centerIn: parent
-        anchors.fill: parent
-        model: titleModel
-        cellWidth: 300; cellHeight: 350
-
-        delegate: Rectangle{
-            color: "#00FF00"
-            width: 230; height: 330
-            Image {
-                source: image
-                width: 225; height: 325
-                anchors.centerIn: parent
-            }
-            MouseArea {
-                anchors.fill: parent
-                onClicked: { stack.push(page2) }
-            }
-        }
-
-        Component.onCompleted: {
-            getApi();
+    Image {
+        id: image
+        source: ""
+        width: 325; height: 525
+        anchors{
+            horizontalCenter: parent.horizontalCenter;
+            verticalCenter: parent.verticalCenter
+            left: parent.left
+            right: parent.right
         }
     }
 
+    Grid {
+        id: grid
+        rows: 7
+        columns: 2
+        anchors.left: image.left
+        leftPadding: 50
+        spacing: 8
+        Text {
+            id: titleLabel
+            color: "white"
+            text: "Title:"
+            font.pixelSize: 16
+        }
+        Text {
+            id: titleText
+            color: "white"
+            text: ""
+            font.pixelSize: 16
+        }
+        Text {
+            id: yearLabel
+            color: "white"
+            text: "Year:"
+            font.pixelSize: 16
+        }
+        Text {
+            id: yearText
+            color: "white"
+            text: ""
+            font.pixelSize: 16
+        }
+        Text {
+            id: plotLabel
+            color: "white"
+            text: "Plot:"
+            font.pixelSize: 16
+        }
+        Text {
+            id: plotText
+            color: "white"
+            text: ""
+            font.pixelSize: 16
+            width: 500
+            wrapMode: Text.WordWrap
+        }
+        Text {
+            id: directorLabel
+            color: "white"
+            text: "Director:"
+            font.pixelSize: 16
+        }
+        Text {
+            id: directorText
+            color: "white"
+            text: ""
+            font.pixelSize: 16
+        }
+        Text {
+            id: runtimeLabel
+            color: "white"
+            text: "Runtime:"
+            font.pixelSize: 16
+        }
+        Text {
+            id: runtimeText
+            color: "white"
+            text: ""
+            font.pixelSize: 16
+        }
+        Text {
+            id: genreLabel
+            color: "white"
+            text: "Genre:"
+            font.pixelSize: 16
+        }
+        Text {
+            id: genreText
+            color: "white"
+            text: ""
+            font.pixelSize: 16
+        }
+        Text {
+            id: actorsLabel
+            color: "white"
+            text: "Actors:"
+            font.pixelSize: 16
+        }
+        Text {
+            id: actorsText
+            color: "white"
+            text: ""
+            font.pixelSize: 16
+        }
+}
     Button{
         id: navButton
         anchors.right: parent.right
@@ -46,7 +124,37 @@ Page{
         onClicked: {
             root.buttonClicked()
         }
+        background: Rectangle  {
+            color: "#8A8A8A"
+        }
+
     }
 
+    function getApiDetails() {
+        const data = null;
 
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === XMLHttpRequest.DONE) {
+                print('DONE')
+                var json = JSON.parse(xhr.responseText)
+                titleText.text = "%1".arg(json["Title"]);
+                yearText.text = "%1".arg(json["Year"]);
+                plotText.text = "%1".arg(json["Plot"]);
+                directorText.text = "%1".arg(json["Director"]);
+                runtimeText.text = "%1".arg(json["Runtime"]);
+                genreText.text = "%1".arg(json["Genre"]);
+                actorsText.text = "%1".arg(json["Actors"]);
+                image.source = "%1".arg(json["Poster"]);
+                print(xhr.responseText)
+            }
+        }
+        xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&t=avatar&type=movie");
+        //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(data);
+    }
+    Component.onCompleted: {
+        getApiDetails()
+    }
 }

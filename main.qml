@@ -36,10 +36,10 @@ Window {
                 source: image
                 width: 225; height: 325
                 anchors.centerIn: parent
-            }
-            MouseArea {
-                anchors.fill: parent
-                onClicked: { stack.push(page2) }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: { stack.push(page2) }
+                }
             }
         }
 
