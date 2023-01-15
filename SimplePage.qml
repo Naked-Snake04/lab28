@@ -5,6 +5,7 @@ import QtQuick.Controls 2.12
 Page{
     id: root
     property alias buttonText: navButton.text
+    property alias titleName: titleText.text
     signal buttonClicked()
 
     background: Rectangle{
@@ -18,7 +19,6 @@ Page{
         x: 300
         y: 50
         leftPadding: 50
-        spacing: 8
         Text {
             id: titleLabel
             color: "white"
@@ -30,6 +30,7 @@ Page{
             color: "white"
             text: ""
             font.pixelSize: 16
+            onTextChanged: getApiDetails()
         }
         Text {
             id: yearLabel
@@ -109,6 +110,7 @@ Page{
 
     Button{
         id: navButton
+        visible: stack.depth > 1
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         onClicked: {
@@ -145,14 +147,10 @@ Page{
                 actorsText.text = "%1".arg(json["Actors"]);
                 image.source = "%1".arg(json["Poster"]);
                 print(xhr.responseText)
+                print(titleName)
             }
         }
-        xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&t=Avatar&type=movie");
-        //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&t="+titleName+"&type=movie");
         xhr.send(data);
-    }
-
-    Component.onCompleted: {
-        getApiDetails()
     }
 }

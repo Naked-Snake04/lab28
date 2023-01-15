@@ -28,7 +28,6 @@ Window {
         anchors.fill: parent
         model: listModel
         cellWidth: 300; cellHeight: 350
-
         delegate: Rectangle{
             id: rect
             color: "#00FF00"
@@ -40,8 +39,7 @@ Window {
                 MouseArea {
                     anchors.fill: parent
                     onClicked: {
-                        stack.push(page2);
-                        print(id)
+                        stack.push(page2,{"titleName": title});
                     }
                 }
             }
@@ -60,10 +58,13 @@ Window {
         id: textfield
         width: 1000
         height: 50
-        placeholderText: "Поиск"
+        placeholderText: "Search"
         text: ""
-        onTextChanged: getApi()
-
+        onTextChanged: {
+            getApi();
+            if (stack.depth>1)
+                stack.pop()
+}
         background: Rectangle  {
             color: "#8A8A8A"
         }
@@ -72,9 +73,11 @@ Window {
     SimplePage {
         id: page2
         visible: false
+        titleName: "Avatar"
         buttonText: "Back"
         onButtonClicked: {
-            stack.pop()
+            stack.pop();
+
         }
     }
 
@@ -98,8 +101,6 @@ Window {
             xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&s=avatar&type=movie")
         else
             xhr.open("GET", "http://www.omdbapi.com/?apikey=f35af11c&s="+ textfield.text +"&type=movie");
-        xhr.setRequestHeader("API-Key", "f35af11c");
-        xhr.setRequestHeader("API-Host", "omdbapi.com");
 
         xhr.send(data);
     }
